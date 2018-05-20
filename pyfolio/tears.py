@@ -530,23 +530,23 @@ def create_returns_tear_sheet(returns, positions=None,
     ax_rolling_returns = plt.subplot(gs[:2, :])
 
     i = 2
-    ax_rolling_returns_vol_match = plt.subplot(gs[i, :],
+    """ax_rolling_returns_vol_match = plt.subplot(gs[i, :],
                                                sharex=ax_rolling_returns)
-    i += 1
+    i += 1"""
     ax_rolling_returns_log = plt.subplot(gs[i, :],
                                          sharex=ax_rolling_returns)
     i += 1
     ax_returns = plt.subplot(gs[i, :],
                              sharex=ax_rolling_returns)
     i += 1
-    ax_rolling_beta = plt.subplot(gs[i, :], sharex=ax_rolling_returns)
-    i += 1
+    """ax_rolling_beta = plt.subplot(gs[i, :], sharex=ax_rolling_returns)
+    i += 1"""
     ax_rolling_volatility = plt.subplot(gs[i, :], sharex=ax_rolling_returns)
     i += 1
     ax_rolling_sharpe = plt.subplot(gs[i, :], sharex=ax_rolling_returns)
     i += 1
-    ax_rolling_risk = plt.subplot(gs[i, :], sharex=ax_rolling_returns)
-    i += 1
+    """ax_rolling_risk = plt.subplot(gs[i, :], sharex=ax_rolling_returns)
+    i += 1"""
     ax_drawdown = plt.subplot(gs[i, :], sharex=ax_rolling_returns)
     i += 1
     ax_underwater = plt.subplot(gs[i, :], sharex=ax_rolling_returns)
@@ -567,7 +567,7 @@ def create_returns_tear_sheet(returns, positions=None,
     ax_rolling_returns.set_title(
         'Cumulative returns')
 
-    plotting.plot_rolling_returns(
+    """plotting.plot_rolling_returns(
         returns,
         factor_returns=benchmark_rets,
         live_start_date=live_start_date,
@@ -576,7 +576,7 @@ def create_returns_tear_sheet(returns, positions=None,
         legend_loc=None,
         ax=ax_rolling_returns_vol_match)
     ax_rolling_returns_vol_match.set_title(
-        'Cumulative returns volatility matched to benchmark')
+        'Cumulative returns volatility matched to benchmark')"""
 
     plotting.plot_rolling_returns(
         returns,
@@ -596,8 +596,8 @@ def create_returns_tear_sheet(returns, positions=None,
     ax_returns.set_title(
         'Returns')
 
-    plotting.plot_rolling_beta(
-        returns, benchmark_rets, ax=ax_rolling_beta)
+    """plotting.plot_rolling_beta(
+        returns, benchmark_rets, ax=ax_rolling_beta)"""
 
     plotting.plot_rolling_volatility(
         returns, factor_returns=benchmark_rets, ax=ax_rolling_volatility)
@@ -605,8 +605,8 @@ def create_returns_tear_sheet(returns, positions=None,
     plotting.plot_rolling_sharpe(
         returns, ax=ax_rolling_sharpe)
 
-    plotting.plot_rolling_fama_french(
-        returns, ax=ax_rolling_risk)
+    """plotting.plot_rolling_fama_french(
+        returns, ax=ax_rolling_risk)"""
 
     # Drawdowns
     plotting.plot_drawdown_periods(

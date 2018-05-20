@@ -241,12 +241,19 @@ def extract_round_trips(transactions,
                         # Push additional stock-prices onto stack
                         price_stack.append(price)
                         dt_stack.append(dt)
-
+                # FIX
+                if not cur_open_dts:
+                    cur_open_dts = [dt]
+                # FIX
+                if invested == 0:
+                    rt_returns = np.nan
+                else:
+                    rt_returns = pnl / invested
                 roundtrips.append({'pnl': pnl,
                                    'open_dt': cur_open_dts[0],
                                    'close_dt': dt,
                                    'long': price < 0,
-                                   'rt_returns': pnl / invested,
+                                   'rt_returns': rt_returns,
                                    'symbol': sym,
                                    })
 
